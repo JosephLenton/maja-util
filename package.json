@@ -1,6 +1,6 @@
 {
   "name": "maja-util",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Utility functions for UI Editor toolkit",
   "repository": "https://github.com/JosephLenton/maja-util",
   "author": "josephlenton@gmail.com",
@@ -19,7 +19,7 @@
     "clean:build": "rimraf ./lib/*",
     "deploy": "yarn run build && yarn publish --access public"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^17.0.2"
   },
   "devDependencies": {
