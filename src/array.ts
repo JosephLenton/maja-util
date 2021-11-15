@@ -1,6 +1,6 @@
 export function alwaysMap<A, B>(
   maybeArray : undefined|A[]|A,
-  mapFunction : (as:A) => B,
+  mapFunction : (as:A, index: number) => B,
 ): B[] {
   if (!maybeArray) {
     return []
@@ -10,5 +10,5 @@ export function alwaysMap<A, B>(
     return maybeArray.map(mapFunction)
   }
 
-  return [mapFunction(maybeArray)]
+  return [mapFunction(maybeArray, 0)]
 }
