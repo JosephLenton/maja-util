@@ -1,5 +1,5 @@
 {
-  "name": "maja-util",
+  "name": "@maja-ui/util",
   "version": "1.2.1",
   "description": "Utility functions for UI Editor toolkit",
   "repository": "https://github.com/JosephLenton/maja-util",
