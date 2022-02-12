@@ -123,6 +123,13 @@ export function multSizeBySize( p : Size, other: Size ):Size {
   }
 }
 
+export function boundsBottomLeft( bounds:Bounds ):Point2D {
+  return {
+    x: Math.min(bounds.min.x, bounds.max.x),
+    y: Math.min(bounds.min.y, bounds.max.y),
+  }
+}
+
 export function boundsToSize( bounds:Bounds ):Size {
   return {
     width: Math.max(bounds.min.x, bounds.max.x) - Math.min(bounds.min.x, bounds.max.x),
