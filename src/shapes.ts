@@ -95,6 +95,20 @@ export function multPointBySize( p : Point2D, size: Size ):Point2D {
   }
 }
 
+export function addPointBySize( p : Point2D, size: Size ):Point2D {
+  return {
+    x : p.x + size.width,
+    y : p.y + size.height,
+  }
+}
+
+export function subPointBySize( p : Point2D, size: Size ):Point2D {
+  return {
+    x : p.x - size.width,
+    y : p.y - size.height,
+  }
+}
+
 export function roundSize( p : Size ):Size {
   return {
     width: Math.round(p.width),
