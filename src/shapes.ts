@@ -144,6 +144,13 @@ export function boundsBottomLeft( bounds:Bounds ):Point2D {
   }
 }
 
+export function boundsTopRight( bounds:Bounds ):Point2D {
+  return {
+    x: Math.max(bounds.min.x, bounds.max.x),
+    y: Math.max(bounds.min.y, bounds.max.y),
+  }
+}
+
 export function boundsToSize( bounds:Bounds ):Size {
   return {
     width: Math.max(bounds.min.x, bounds.max.x) - Math.min(bounds.min.x, bounds.max.x),
