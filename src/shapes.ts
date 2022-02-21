@@ -172,6 +172,15 @@ export function boundsToSize( bounds:Bounds ):Size {
   }
 }
 
+export function boundsContainsPoint( bounds:Bounds, point:Point2D ): boolean {
+  let minX = Math.min(bounds.min.x, bounds.max.x)
+  let minY = Math.min(bounds.min.y, bounds.max.y)
+  let maxX = Math.max(bounds.min.x, bounds.max.x)
+  let maxY = Math.max(bounds.min.y, bounds.max.y)
+
+  return (minX <= point.x && point.x <= maxX) && (minY <= point.y && point.y <= maxY)
+}
+
 export function lineIntersectsCircle( line:Line, circle:Circle ):boolean {
   // The line intersection below is really for infinite lines.
   // So I do a box intersection first.
