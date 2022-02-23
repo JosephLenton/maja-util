@@ -1,5 +1,5 @@
 export * from './concat-class-names'
 export * from './key'
 export * from './mouse'
-export * from './shapes'
+export * from './geom'
 export * from './array'

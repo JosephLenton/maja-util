@@ -1,5 +1,5 @@
 import React from 'react'
-import { Point2D } from './shapes'
+import { Point2D } from './geom'
 
 const NONE_BUTTONS = 0
 const PRIMARY_BUTTONS = 1
