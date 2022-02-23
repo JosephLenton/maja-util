@@ -125,7 +125,7 @@ export function boundsCenter( bounds:Bounds ):Point2D {
 
   return {
     x: minX + (width/2),
-    y: minX + (height/2),
+    y: minY + (height/2),
   }
 }
 
