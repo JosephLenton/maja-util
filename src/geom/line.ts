@@ -17,6 +17,24 @@ export function newLine( start : Point2D, end : Point2D ) : Line {
   }
 }
 
+export function addLineByPoint( line: Line, point: Point2D ): Line {
+  return {
+    x1: line.x1 + point.x,
+    y1: line.y1 + point.y,
+    x2: line.x2 + point.x,
+    y2: line.y2 + point.y,
+  }
+}
+
+export function subtractLineByPoint( line: Line, point: Point2D ): Line {
+  return {
+    x1: line.x1 - point.x,
+    y1: line.y1 - point.y,
+    x2: line.x2 - point.x,
+    y2: line.y2 - point.y,
+  }
+}
+
 export function lineIntersectsCircle( line:Line, circle:Circle ):boolean {
   // The line intersection below is really for infinite lines.
   // So I do a box intersection first.

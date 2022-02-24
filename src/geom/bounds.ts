@@ -1,4 +1,4 @@
-import { Point2D, multPoint, divPoint } from './points'
+import { Point2D, multPoint, divPoint, addPoints, subtractPoints } from './points'
 import { Size } from './size'
 
 export type Bounds = {
@@ -143,4 +143,18 @@ export function boundsContainsPoint( bounds:Bounds, point:Point2D ): boolean {
   let maxY = Math.max(bounds.min.y, bounds.max.y)
 
   return (minX <= point.x && point.x <= maxX) && (minY <= point.y && point.y <= maxY)
+}
+
+export function addBoundsByPoint( bounds: Bounds, point: Point2D ): Bounds {
+  return {
+    min: addPoints(bounds.min, point),
+    max: addPoints(bounds.max, point),
+  }
+}
+
+export function subtractBoundsByPoint( bounds: Bounds, point: Point2D ): Bounds {
+  return {
+    min: subtractPoints(bounds.min, point),
+    max: subtractPoints(bounds.max, point),
+  }
 }
