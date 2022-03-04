@@ -130,3 +130,19 @@ export function linesToPointsRounded( lines : Line[] ):number[] {
 
   return points
 }
+
+export function linesToPoints( lines : Line[] ):number[] {
+  const points : number[] = new Array( lines.length * 4 )
+
+  for ( let i = 0; i < lines.length; i++ ) {
+    const line = lines[i]
+    const pointsI = i*4
+
+    points[pointsI] = line.x1
+    points[pointsI+1] = line.y1
+    points[pointsI+2] = line.x2
+    points[pointsI+3] = line.y2
+  }
+
+  return points
+}
