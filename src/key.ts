@@ -1,4 +1,6 @@
 export type Meta =
+  | 'meta'
+  | 'shift-meta'
   | 'ctrl'
   | 'alt'
   | 'shift'
@@ -6,7 +8,6 @@ export type Meta =
   | 'alt-ctrl'
   | 'alt-shift'
   | 'alt-ctrl-shift'
-  | ''
 
 export function getKey(ev:React.KeyboardEvent): string {
   let key = ev.key.toLocaleLowerCase()
@@ -19,7 +20,7 @@ export function getKey(ev:React.KeyboardEvent): string {
     meta = meta.replace(key, '')
   }
 
-  if ( meta === '' ) {
+  if ( meta === undefined ) {
     return key
   }
 
@@ -35,10 +36,19 @@ export function getKey(ev:React.KeyboardEvent): string {
   return `${meta}-${ev.key.toLowerCase()}`.replace('--', '-')
 }
 
-export function getKeyMeta(ev:React.KeyboardEvent): Meta {
+export function getKeyMeta(ev:React.KeyboardEvent): Meta|undefined {
   const hasAlt = ev.altKey
   const hasCtrl = ev.ctrlKey
+  const hasMeta = ev.metaKey
   const hasShift = ev.shiftKey
+
+  if ( hasMeta ) {
+    if ( hasShift ) {
+      return 'shift-meta'
+    }
+
+    return 'meta'
+  }
 
   if ( hasAlt ) {
     if ( hasCtrl ) {
@@ -64,5 +74,5 @@ export function getKeyMeta(ev:React.KeyboardEvent): Meta {
     return 'shift'
   }
 
-  return ''
+  return undefined
 }

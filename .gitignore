@@ -110,3 +110,5 @@ dist
 
 /lib
 
+.DS_store
+
